@@ -3,207 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Técnico - Grafos</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background: #1d3557;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            background: #457b9d;
-            padding: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            width: 90%;
-            max-width: 900px;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h2 { color: #1d3557; }
-        pre {
-            background: #e9ecef;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-    </style>
+    <title>Blog Técnico: Grafos</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
-    <h1>Blog Técnico: Estructuras de Datos – Grafos</h1>
-</header>
+    <header>
+        <h1>Blog Técnico: Estructura de Datos - Grafos</h1>
+        <p>Un espacio para comprender a fondo cómo funcionan los grafos en informática</p>
+    </header>
 
-<nav>
-    <a href="#post1">Introducción</a>
-    <a href="#post2">Representación</a>
-    <a href="#post3">BFS y DFS</a>
-</nav>
+    <main>
 
-<div class="container">
+        <!-- ======================= POST 1 ======================= -->
+        <article class="post">
+            <h2>Post #1: Introducción a los Grafos</h2>
 
-    <!-- POST 1 -->
-    <section id="post1">
-        <h2>Post #1 – Introducción a los Grafos</h2>
-        <p>
-            Un <b>grafo</b> es una estructura de datos formada por:
-            <br>✔ <b>Nodos o vértices (V)</b>
-            <br>✔ <b>Aristas o ejes (E)</b> que conectan los nodos.
-        </p>
+            <!-- Imagen del post -->
+            <img src="img/post1.png" alt="Imagen introductoria de grafos" class="post-img">
 
-        <p>
-            Matemáticamente se define como:
-            <br><b>G = (V, E)</b>
-        </p>
+            <p>Los grafos son una de las estructuras de datos más importantes en la informática moderna. 
+            Se utilizan para modelar redes de comunicación, mapas, relaciones sociales, rutas óptimas, 
+            estructuras moleculares y mucho más. Un grafo está formado por dos componentes fundamentales:</p>
 
-        <h3>Tipos de grafos principales</h3>
-        <ul>
-            <li><b>Dirigido:</b> Las aristas tienen dirección.</li>
-            <li><b>No dirigido:</b> Las aristas no tienen dirección.</li>
-            <li><b>Ponderado:</b> Cada arista tiene un valor.</li>
-            <li><b>No ponderado:</b> Todas las aristas valen 1.</li>
-        </ul>
+            <ul>
+                <li><strong>Vértices (nodos):</strong> Representan entidades.</li>
+                <li><strong>Aristas:</strong> Representan conexiones o relaciones entre entidades.</li>
+            </ul>
 
-        <h3>Ejemplo visual de un grafo no dirigido</h3>
-        <pre>
-    (1)──(2)
-     │  ╱ │ \
-     │ ╱  │  (5)
-    (3)──(4)
-        </pre>
-    </section>
+            <p>Comprender cómo se representan, almacenan y manipulan los grafos es fundamental para 
+            resolver problemas reales que incluyen navegación GPS, análisis de redes sociales y optimización.</p>
+        </article>
 
-    <hr>
+        <!-- ======================= POST 2 ======================= -->
+        <article class="post">
+            <h2>Post #2: Tipos de Grafos</h2>
 
-    <!-- POST 2 -->
-    <section id="post2">
-        <h2>Post #2 – Representación de Grafos</h2>
-        <p>
-            Un grafo puede almacenarse en memoria de varias formas. Las dos más comunes son:
-        </p>
+            <!-- Imagen del post -->
+            <img src="img/post2.png" alt="Tipos de grafos" class="post-img">
 
-        <h3>1. Lista de Adyacencia</h3>
-        <p>
-            Para cada nodo se guarda una lista de sus vecinos.
-            <br>✔ Ahorra memoria en grafos grandes y dispersos.
-        </p>
+            <p>Existen diversos tipos de grafos, cada uno diseñado para representar relaciones específicas. 
+            Algunos de los más importantes son:</p>
 
-        <pre>
-Grafo:
-1 → 2, 3
-2 → 4
-3 → 1
-4 → (sin conexiones)
-        </pre>
+            <ul>
+                <li><strong>Grafo dirigido:</strong> Las aristas tienen dirección.</li>
+                <li><strong>Grafo no dirigido:</strong> No existe dirección; las conexiones son recíprocas.</li>
+                <li><strong>Grafo ponderado:</strong> Cada arista tiene un valor numérico asociado.</li>
+                <li><strong>Grafo simple:</strong> No permite múltiples aristas entre los mismos nodos.</li>
+                <li><strong>Grafo completo:</strong> Cada nodo está conectado con todos los demás.</li>
+            </ul>
 
-        <h3>2. Matriz de Adyacencia</h3>
-        <p>
-            Matriz NxN donde cada celda indica si existe una conexión.
-            <br>✔ Permite consultar aristas rápidamente.
-        </p>
+            <p>Elegir el tipo adecuado de grafo permite representar y resolver un problema de manera más eficiente.</p>
+        </article>
 
-        <pre>
-    1  2  3  4
-1 [0, 1, 1, 0]
-2 [0, 0, 0, 1]
-3 [1, 0, 0, 0]
-4 [0, 0, 0, 0]
-        </pre>
+        <!-- ======================= POST 3 ======================= -->
+        <article class="post">
+            <h2>Post #3: Recorridos en Grafos (BFS y DFS)</h2>
 
-        <h3>Comparación</h3>
-        <ul>
-            <li>✔ Lista = eficiente en memoria</li>
-            <li>✔ Matriz = consultas más rápidas</li>
-        </ul>
-    </section>
+            <!-- Imagen del post -->
+            <img src="img/post3.png" alt="Recorridos BFS y DFS" class="post-img">
 
-    <hr>
+            <p>Los recorridos son procesos fundamentales para analizar, buscar o verificar información en un grafo. 
+            Los dos más utilizados son:</p>
 
-    <!-- POST 3 -->
-    <section id="post3">
-        <h2>Post #3 – Algoritmos Fundamentales: BFS y DFS</h2>
+            <h3>🔹 BFS (Breadth First Search)</h3>
+            <p>Explora el grafo por niveles, primero visitando los nodos más cercanos. Es ideal para encontrar 
+            caminos más cortos en grafos no ponderados.</p>
 
-        <p>Los dos algoritmos más usados para recorrer un grafo son:</p>
+            <h3>🔹 DFS (Depth First Search)</h3>
+            <p>Explora lo más profundo posible antes de retroceder. Es útil para detectar ciclos, 
+            generar árboles de expansión y resolver problemas de backtracking.</p>
 
-        <h3>📌 1. BFS – Breadth-First Search (Búsqueda en Amplitud)</h3>
-        <p>
-            Recorre el grafo por “niveles”.  
-            Usa una <b>cola (queue)</b>.
-        </p>
+            <p>Ambos algoritmos son bases en múltiples aplicaciones como análisis de redes, videojuegos, inteligencia artificial y más.</p>
+        </article>
 
-        <p><b>Idea general:</b></p>
-        <pre>
-BFS(grafo, inicio):
-    marcar inicio como visitado
-    poner inicio en la cola
-    mientras cola no esté vacía:
-        nodo = sacar de la cola
-        para cada vecino de nodo:
-            si no está visitado:
-                marcar como visitado
-                agregar a la cola
-        </pre>
+    </main>
 
-        <h4>Ejemplo visual:</h4>
-        <pre>
-Nivel 0:  1
-Nivel 1:  2, 3
-Nivel 2:  4, 5
-        </pre>
+    <footer>
+        <p>Blog Técnico de Grafos — Proyecto académico</p>
+    </footer>
 
-        <h3>📌 2. DFS – Depth-First Search (Búsqueda en Profundidad)</h3>
-        <p>
-            Recorre el grafo "a lo profundo".  
-            Usa una <b>pila (stack)</b> o recursión.
-        </p>
-
-        <p><b>Idea general:</b></p>
-        <pre>
-DFS(nodo):
-    marcar nodo como visitado
-    para cada vecino:
-        si no visitado:
-            DFS(vecino)
-        </pre>
-
-        <h4>Ejemplo visual:</h4>
-        <pre>
-1 → 2 → 4 → (fin)
-Luego retrocede:
-1 → 3 → 5
-        </pre>
-
-        <p>
-            Ambos algoritmos permiten recorrer todos los nodos y sirven como base para:
-            <br>✔ encontrar caminos  
-            ✔ detectar ciclos  
-            ✔ generar árboles  
-            ✔ análisis de redes  
-        </p>
-    </section>
-
-</div>
 </body>
 </html>
