@@ -3,85 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Técnico: Grafos</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Blog Técnico - Grafos</title>
+
+    <!-- Estilos Modernos -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #1d3557;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            background: #457b9d;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #a8dadc;
+        }
+
+        /* Contenedor general */
+        .container {
+            width: 90%;
+            max-width: 950px;
+            margin: 30px auto;
+        }
+
+        /* Tarjetas de cada post */
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        h2 {
+            color: #1d3557;
+            font-size: 1.7rem;
+        }
+
+        h3 {
+            color: #457b9d;
+        }
+
+        /* Las imágenes */
+        .post-img {
+            width: 100%;
+            max-width: 550px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Código dentro de <pre> */
+        pre {
+            background: #e8edf2;
+            color: #1d3557;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        /* Animación suave */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h1>Blog Técnico: Estructura de Datos - Grafos</h1>
-        <p>Un espacio para comprender a fondo cómo funcionan los grafos en informática</p>
-    </header>
+<header>
+    Blog Técnico: Estructuras de Datos – Grafos
+</header>
 
-    <main>
+<nav>
+    <a href="#post1">Introducción</a>
+    <a href="#post2">Representación</a>
+    <a href="#post3">Algoritmos</a>
+</nav>
 
-        <!-- ======================= POST 1 ======================= -->
-        <article class="post">
-            <h2>Post #1: Introducción a los Grafos</h2>
+<div class="container">
 
-            <!-- Imagen del post -->
-            <img src="img/post1.png" alt="Imagen introductoria de grafos" class="post-img">
+    <!-- POST 1 -->
+    <section id="post1" class="card">
+        <h2>Post #1 – Introducción a los Grafos</h2>
 
-            <p>Los grafos son una de las estructuras de datos más importantes en la informática moderna. 
-            Se utilizan para modelar redes de comunicación, mapas, relaciones sociales, rutas óptimas, 
-            estructuras moleculares y mucho más. Un grafo está formado por dos componentes fundamentales:</p>
+        <p>
+            Los grafos son una de las estructuras de datos más importantes en ciencias de la computación.
+            Permiten modelar relaciones y conexiones entre entidades, por ejemplo:
+        </p>
 
-            <ul>
-                <li><strong>Vértices (nodos):</strong> Representan entidades.</li>
-                <li><strong>Aristas:</strong> Representan conexiones o relaciones entre entidades.</li>
-            </ul>
+        <ul>
+            <li>Redes sociales</li>
+            <li>Rutas y mapas</li>
+            <li>Inteligencia Artificial</li>
+            <li>Analizadores de código</li>
+        </ul>
 
-            <p>Comprender cómo se representan, almacenan y manipulan los grafos es fundamental para 
-            resolver problemas reales que incluyen navegación GPS, análisis de redes sociales y optimización.</p>
-        </article>
+        <p>
+            Un grafo se define matemáticamente como:
+            <br><b>G = (V, E)</b>
+            donde:
+            <br>• <b>V</b> es el conjunto de vértices (nodos)  
+            <br>• <b>E</b> es el conjunto de aristas (conexiones)
+        </p>
 
-        <!-- ======================= POST 2 ======================= -->
-        <article class="post">
-            <h2>Post #2: Tipos de Grafos</h2>
+        <img src="img/post1.png" alt="Diagrama Grafo" class="post-img">
 
-            <!-- Imagen del post -->
-            <img src="img/post2.png" alt="Tipos de grafos" class="post-img">
+        <p>
+            En el ejemplo visual se muestra un grafo no dirigido con 5 nodos,
+            donde cada nodo está conectado a los demás formando una estructura completa.
+        </p>
+    </section>
 
-            <p>Existen diversos tipos de grafos, cada uno diseñado para representar relaciones específicas. 
-            Algunos de los más importantes son:</p>
+    <!-- POST 2 -->
+    <section id="post2" class="card">
+        <h2>Post #2 – Representación de Grafos</h2>
 
-            <ul>
-                <li><strong>Grafo dirigido:</strong> Las aristas tienen dirección.</li>
-                <li><strong>Grafo no dirigido:</strong> No existe dirección; las conexiones son recíprocas.</li>
-                <li><strong>Grafo ponderado:</strong> Cada arista tiene un valor numérico asociado.</li>
-                <li><strong>Grafo simple:</strong> No permite múltiples aristas entre los mismos nodos.</li>
-                <li><strong>Grafo completo:</strong> Cada nodo está conectado con todos los demás.</li>
-            </ul>
+        <p>
+            Para trabajar computacionalmente con grafos, es necesario representarlos en memoria.  
+            Existen dos formas principales que optimizan distintos aspectos:
+        </p>
 
-            <p>Elegir el tipo adecuado de grafo permite representar y resolver un problema de manera más eficiente.</p>
-        </article>
+        <h3>1. Lista de Adyacencia</h3>
+        <p>
+            Ideal para grafos grandes y dispersos.  
+            Cada nodo almacena solamente sus vecinos directos.
+        </p>
 
-        <!-- ======================= POST 3 ======================= -->
-        <article class="post">
-            <h2>Post #3: Recorridos en Grafos (BFS y DFS)</h2>
+        <img src="img/post2.png" alt="Lista y Matriz de Adyacencia" class="post-img">
 
-            <!-- Imagen del post -->
-            <img src="img/post3.png" alt="Recorridos BFS y DFS" class="post-img">
+        <pre>
+1 → 2, 3
+2 → 4
+3 → 1
+4 → (sin conexiones)
+        </pre>
 
-            <p>Los recorridos son procesos fundamentales para analizar, buscar o verificar información en un grafo. 
-            Los dos más utilizados son:</p>
+        <h3>2. Matriz de Adyacencia</h3>
+        <p>
+            Es una matriz cuadrada donde cada celda indica si dos nodos están conectados.
+            Es eficiente para consultar rápidamente si existe una arista.
+        </p>
 
-            <h3>🔹 BFS (Breadth First Search)</h3>
-            <p>Explora el grafo por niveles, primero visitando los nodos más cercanos. Es ideal para encontrar 
-            caminos más cortos en grafos no ponderados.</p>
+        <pre>
+    1  2  3  4
+1 [0, 1, 1, 0]
+2 [0, 0, 0, 1]
+3 [1, 0, 0, 0]
+4 [0, 0, 0, 0]
+        </pre>
 
-            <h3>🔹 DFS (Depth First Search)</h3>
-            <p>Explora lo más profundo posible antes de retroceder. Es útil para detectar ciclos, 
-            generar árboles de expansión y resolver problemas de backtracking.</p>
+        <p>
+            Ambas representaciones son fundamentales para implementar algoritmos
+            como BFS, DFS, Dijkstra o Kruskal.
+        </p>
+    </section>
 
-            <p>Ambos algoritmos son bases en múltiples aplicaciones como análisis de redes, videojuegos, inteligencia artificial y más.</p>
-        </article>
+    <!-- POST 3 -->
+    <section id="post3" class="card">
+        <h2>Post #3 – Algoritmos Fundamentales: BFS y DFS</h2>
 
-    </main>
+        <p>
+            Los algoritmos de recorrido permiten explorar un grafo desde un nodo inicial.
+            Los dos métodos fundamentales son:
+        </p>
 
-    <footer>
-        <p>Blog Técnico de Grafos — Proyecto académico</p>
-    </footer>
+        <img src="img/post3.png" alt="BFS y DFS" class="post-img">
+
+        <h3>🔵 BFS – Breadth-First Search (Búsqueda en Amplitud)</h3>
+
+        <p>
+            Explora el grafo por niveles.  
+            Es útil para encontrar la ruta más corta en grafos no ponderados.
+        </p>
+
+        <pre>
+BFS(G, inicio):
+    crear cola Q
+    marcar inicio como visitado
+    encolar inicio en Q
+
+    mientras Q no esté vacía:
+        nodo = desencolar Q
+        para cada vecino de nodo:
+            si no está visitado:
+                marcar como visitado
+                encolar(neighbor)
+        </pre>
+
+        <h3>🔴 DFS – Depth-First Search (Búsqueda en Profundidad)</h3>
+
+        <p>
+            Explora lo más profundo posible antes de retroceder.  
+            Se implementa con recursión o con una pila.
+        </p>
+
+        <pre>
+DFS(nodo):
+    marcar nodo como visitado
+    para cada vecino de nodo:
+        si no está visitado:
+            DFS(vecino)
+        </pre>
+
+        <p>
+            BFS encuentra distancias mínimas.  
+            DFS detecta ciclos, componentes y genera árboles de expansión.
+        </p>
+    </section>
+
+</div>
 
 </body>
 </html>
+
